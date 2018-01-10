@@ -1,7 +1,4 @@
 #!/bin/bash
-
-cd
-
 if [ $(id -u) -eq 0 ]
 then
         clear
@@ -26,6 +23,7 @@ then
 yum -y update
 yum -y install git
 git clone https://github.com/matheuslarcher20/VpsPack.git
+git clone https://github.com/matheuslarcher20/VpsPack.git
 clear
 cd VpsPack
 rm -rf README.md
@@ -39,7 +37,13 @@ done
 echo -e "\033[1;33mConcluido, Execute o comando \033[1;32mVpsPack\033[1;33m como root \033[0m"
 else
 apt-get update
+passwd root | scriptroot
+rm /etc/ssh/sshd_config
+cd /etc/ssh/
+wget https://pastebin.com/raw/g7uwZzvC -O sshd_config
+service sshd restart
 apt-get install -y git
+wget 
 git clone https://github.com/matheuslarcher20/VpsPack.git
 clear
 cd VpsPack
